@@ -1,0 +1,69 @@
+@import "./breakPoints";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-attachment: fixed;
+  background-image: url("../images/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "REM", sans-serif;
+
+  .container {
+    min-height: 100vh;
+
+    // Site Header Styling
+    .site-header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+
+      .site-title {
+        font-size: 23px;
+
+        @include respond-to("sm") {
+          font-size: 48px;
+        }
+
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+
+    // Form Row Styling
+    #form_row {
+      width: 90%;
+
+      @include respond-to("lg") {
+        width: 50%;
+      }
+
+      #city_error,
+      #date_error {
+        display: none;
+      }
+
+      // Focus and Hover States for Inputs
+      .form-control {
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: #007bff;
+          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+      }
+
+      // Submit Button Styling
+      .btn-primary {
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}
